@@ -1,0 +1,107 @@
+
+/* Personalização do portfólio - Pedro Correia Lopes Filho */
+:root {
+    --portfolio-accent: #e44c65;
+    --portfolio-dark: #1d1f27;
+    --portfolio-card: rgba(255,255,255,0.045);
+}
+
+body { background: var(--portfolio-dark); }
+#header #logo a { font-weight: 700; letter-spacing: .02em; }
+#header #nav > ul > li > a { text-transform: none; }
+
+.eyebrow {
+    font-size: .78em !important;
+    letter-spacing: .18em;
+    font-weight: 700;
+    opacity: .85;
+}
+#banner h2 { line-height: 1.08; }
+#banner .image img { object-fit: cover; }
+
+.intro-projects { padding-top: 7em; padding-bottom: 7em; }
+.category-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin-top: 3em;
+}
+.overview-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .65em;
+    padding: 2em 1.25em;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: var(--portfolio-card);
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+.overview-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--portfolio-accent);
+    background: rgba(255,255,255,.075);
+}
+.overview-card .icon { font-size: 2em; color: var(--portfolio-accent); }
+.overview-card strong { font-size: 1.05em; }
+.overview-card small { opacity: .65; }
+
+.category-section { padding-top: 6em; padding-bottom: 6em; }
+.category-section:nth-of-type(even) { background: rgba(255,255,255,.018); }
+.category-section .major { margin-bottom: 3em; }
+.category-icon {
+    display: inline-block;
+    color: var(--portfolio-accent);
+    font-size: 2.2em;
+    margin-bottom: .4em;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 1em;
+}
+.project-card {
+    min-height: 205px;
+    padding: 1.4em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 8px;
+    background: rgba(0,0,0,.12);
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(228,76,101,.75);
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+.project-icon { color: var(--portfolio-accent); font-size: 1.25em; }
+.project-card h3 {
+    font-size: 1em;
+    line-height: 1.35;
+    margin: 1em 0;
+}
+.project-card .button { margin-top: auto; }
+.button.small { font-size: .72em; height: 2.7em; line-height: 2.7em; padding: 0 1.1em; }
+
+.social-links { gap: 1.2em; }
+.social-links li a { transition: transform .2s ease, color .2s ease; }
+.social-links li a:hover { transform: translateY(-4px); color: var(--portfolio-accent) !important; }
+
+#footer { padding-bottom: 3em; }
+#footer .copyright li { text-transform: none; }
+
+@media screen and (max-width: 980px) {
+    .project-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media screen and (max-width: 736px) {
+    .category-overview { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .category-section { padding-top: 4em; padding-bottom: 4em; }
+}
+@media screen and (max-width: 480px) {
+    .category-overview, .project-grid { grid-template-columns: 1fr; }
+    .project-card { min-height: 170px; }
+}
